@@ -1,0 +1,454 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F6548562177660C400109CEF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6548561177660C400109CEF /* Cocoa.framework */; };
+		F654856C177660C400109CEF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F654856A177660C400109CEF /* InfoPlist.strings */; };
+		F6548570177660C400109CEF /* PinacotecaCore.m in Sources */ = {isa = PBXBuildFile; fileRef = F654856F177660C400109CEF /* PinacotecaCore.m */; };
+		F6548578177660C400109CEF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6548577177660C400109CEF /* SenTestingKit.framework */; };
+		F6548579177660C400109CEF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6548561177660C400109CEF /* Cocoa.framework */; };
+		F654857C177660C400109CEF /* PinacotecaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F654855E177660C400109CEF /* PinacotecaCore.framework */; };
+		F6548582177660C400109CEF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F6548580177660C400109CEF /* InfoPlist.strings */; };
+		F6548585177660C400109CEF /* PinacotecaCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F6548584177660C400109CEF /* PinacotecaCoreTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F654857A177660C400109CEF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F6548555177660C400109CEF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F654855D177660C400109CEF;
+			remoteInfo = PinacotecaCore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F654855E177660C400109CEF /* PinacotecaCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PinacotecaCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6548561177660C400109CEF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		F6548564177660C400109CEF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		F6548565177660C400109CEF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F6548566177660C400109CEF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F6548569177660C400109CEF /* PinacotecaCore-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PinacotecaCore-Info.plist"; sourceTree = "<group>"; };
+		F654856B177660C400109CEF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F654856D177660C400109CEF /* PinacotecaCore-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PinacotecaCore-Prefix.pch"; sourceTree = "<group>"; };
+		F654856E177660C400109CEF /* PinacotecaCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PinacotecaCore.h; sourceTree = "<group>"; };
+		F654856F177660C400109CEF /* PinacotecaCore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PinacotecaCore.m; sourceTree = "<group>"; };
+		F6548576177660C400109CEF /* PinacotecaCoreTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinacotecaCoreTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6548577177660C400109CEF /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		F654857F177660C400109CEF /* PinacotecaCoreTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PinacotecaCoreTests-Info.plist"; sourceTree = "<group>"; };
+		F6548581177660C400109CEF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F6548583177660C400109CEF /* PinacotecaCoreTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PinacotecaCoreTests.h; sourceTree = "<group>"; };
+		F6548584177660C400109CEF /* PinacotecaCoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PinacotecaCoreTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F654855A177660C400109CEF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6548562177660C400109CEF /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6548572177660C400109CEF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6548578177660C400109CEF /* SenTestingKit.framework in Frameworks */,
+				F6548579177660C400109CEF /* Cocoa.framework in Frameworks */,
+				F654857C177660C400109CEF /* PinacotecaCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F6548554177660C400109CEF = {
+			isa = PBXGroup;
+			children = (
+				F6548567177660C400109CEF /* PinacotecaCore */,
+				F654857D177660C400109CEF /* PinacotecaCoreTests */,
+				F6548560177660C400109CEF /* Frameworks */,
+				F654855F177660C400109CEF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F654855F177660C400109CEF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F654855E177660C400109CEF /* PinacotecaCore.framework */,
+				F6548576177660C400109CEF /* PinacotecaCoreTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F6548560177660C400109CEF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F6548561177660C400109CEF /* Cocoa.framework */,
+				F6548577177660C400109CEF /* SenTestingKit.framework */,
+				F6548563177660C400109CEF /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F6548563177660C400109CEF /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F6548564177660C400109CEF /* AppKit.framework */,
+				F6548565177660C400109CEF /* CoreData.framework */,
+				F6548566177660C400109CEF /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		F6548567177660C400109CEF /* PinacotecaCore */ = {
+			isa = PBXGroup;
+			children = (
+				F654856E177660C400109CEF /* PinacotecaCore.h */,
+				F654856F177660C400109CEF /* PinacotecaCore.m */,
+				F6548568177660C400109CEF /* Supporting Files */,
+			);
+			path = PinacotecaCore;
+			sourceTree = "<group>";
+		};
+		F6548568177660C400109CEF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F6548569177660C400109CEF /* PinacotecaCore-Info.plist */,
+				F654856A177660C400109CEF /* InfoPlist.strings */,
+				F654856D177660C400109CEF /* PinacotecaCore-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F654857D177660C400109CEF /* PinacotecaCoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				F6548583177660C400109CEF /* PinacotecaCoreTests.h */,
+				F6548584177660C400109CEF /* PinacotecaCoreTests.m */,
+				F654857E177660C400109CEF /* Supporting Files */,
+			);
+			path = PinacotecaCoreTests;
+			sourceTree = "<group>";
+		};
+		F654857E177660C400109CEF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F654857F177660C400109CEF /* PinacotecaCoreTests-Info.plist */,
+				F6548580177660C400109CEF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		F654855B177660C400109CEF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		F654855D177660C400109CEF /* PinacotecaCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6548588177660C400109CEF /* Build configuration list for PBXNativeTarget "PinacotecaCore" */;
+			buildPhases = (
+				F6548559177660C400109CEF /* Sources */,
+				F654855A177660C400109CEF /* Frameworks */,
+				F654855B177660C400109CEF /* Headers */,
+				F654855C177660C400109CEF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PinacotecaCore;
+			productName = PinacotecaCore;
+			productReference = F654855E177660C400109CEF /* PinacotecaCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F6548575177660C400109CEF /* PinacotecaCoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F654858B177660C400109CEF /* Build configuration list for PBXNativeTarget "PinacotecaCoreTests" */;
+			buildPhases = (
+				F6548571177660C400109CEF /* Sources */,
+				F6548572177660C400109CEF /* Frameworks */,
+				F6548573177660C400109CEF /* Resources */,
+				F6548574177660C400109CEF /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F654857B177660C400109CEF /* PBXTargetDependency */,
+			);
+			name = PinacotecaCoreTests;
+			productName = PinacotecaCoreTests;
+			productReference = F6548576177660C400109CEF /* PinacotecaCoreTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F6548555177660C400109CEF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Tobias Kräntzer";
+			};
+			buildConfigurationList = F6548558177660C400109CEF /* Build configuration list for PBXProject "PinacotecaCore" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F6548554177660C400109CEF;
+			productRefGroup = F654855F177660C400109CEF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F654855D177660C400109CEF /* PinacotecaCore */,
+				F6548575177660C400109CEF /* PinacotecaCoreTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F654855C177660C400109CEF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F654856C177660C400109CEF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6548573177660C400109CEF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6548582177660C400109CEF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F6548574177660C400109CEF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F6548559177660C400109CEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6548570177660C400109CEF /* PinacotecaCore.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6548571177660C400109CEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6548585177660C400109CEF /* PinacotecaCoreTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F654857B177660C400109CEF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F654855D177660C400109CEF /* PinacotecaCore */;
+			targetProxy = F654857A177660C400109CEF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F654856A177660C400109CEF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F654856B177660C400109CEF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F6548580177660C400109CEF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F6548581177660C400109CEF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F6548586177660C400109CEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F6548587177660C400109CEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		F6548589177660C400109CEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PinacotecaCore/PinacotecaCore-Prefix.pch";
+				INFOPLIST_FILE = "PinacotecaCore/PinacotecaCore-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		F654858A177660C400109CEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PinacotecaCore/PinacotecaCore-Prefix.pch";
+				INFOPLIST_FILE = "PinacotecaCore/PinacotecaCore-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		F654858C177660C400109CEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PinacotecaCore/PinacotecaCore-Prefix.pch";
+				INFOPLIST_FILE = "PinacotecaCoreTests/PinacotecaCoreTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		F654858D177660C400109CEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PinacotecaCore/PinacotecaCore-Prefix.pch";
+				INFOPLIST_FILE = "PinacotecaCoreTests/PinacotecaCoreTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F6548558177660C400109CEF /* Build configuration list for PBXProject "PinacotecaCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6548586177660C400109CEF /* Debug */,
+				F6548587177660C400109CEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6548588177660C400109CEF /* Build configuration list for PBXNativeTarget "PinacotecaCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6548589177660C400109CEF /* Debug */,
+				F654858A177660C400109CEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F654858B177660C400109CEF /* Build configuration list for PBXNativeTarget "PinacotecaCoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F654858C177660C400109CEF /* Debug */,
+				F654858D177660C400109CEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F6548555177660C400109CEF /* Project object */;
+}

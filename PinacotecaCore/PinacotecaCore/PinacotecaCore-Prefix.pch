@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'PinacotecaCore' target in the 'PinacotecaCore' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
