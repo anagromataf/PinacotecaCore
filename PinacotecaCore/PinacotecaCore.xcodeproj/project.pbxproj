@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		D9D2053F52A84477AE1C5F90 /* libPods-PinacotecaCoreTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AFB068A69E4261B63A445F /* libPods-PinacotecaCoreTests.a */; };
+		F640538717766CED007051E0 /* PCServerAPIControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F640538617766CED007051E0 /* PCServerAPIControllerTests.m */; };
+		F640538B17767369007051E0 /* ServerAPIResponses.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F640538A17767369007051E0 /* ServerAPIResponses.bundle */; };
 		F6548562177660C400109CEF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6548561177660C400109CEF /* Cocoa.framework */; };
 		F654856C177660C400109CEF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F654856A177660C400109CEF /* InfoPlist.strings */; };
 		F6548578177660C400109CEF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6548577177660C400109CEF /* SenTestingKit.framework */; };
 		F6548579177660C400109CEF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6548561177660C400109CEF /* Cocoa.framework */; };
 		F654857C177660C400109CEF /* PinacotecaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F654855E177660C400109CEF /* PinacotecaCore.framework */; };
 		F6548582177660C400109CEF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F6548580177660C400109CEF /* InfoPlist.strings */; };
-		F6548585177660C400109CEF /* PinacotecaCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F6548584177660C400109CEF /* PinacotecaCoreTests.m */; };
 		F6C1E91B1776665500953C67 /* OHHTTPStubsResponse+BundleResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C1E91A1776665500953C67 /* OHHTTPStubsResponse+BundleResponse.m */; };
 		F6C1E92017766A3200953C67 /* PCServerAPIController.h in Headers */ = {isa = PBXBuildFile; fileRef = F6C1E91E17766A3200953C67 /* PCServerAPIController.h */; };
 		F6C1E92117766A3200953C67 /* PCServerAPIController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C1E91F17766A3200953C67 /* PCServerAPIController.m */; };
@@ -35,6 +36,8 @@
 /* Begin PBXFileReference section */
 		B4AFB068A69E4261B63A445F /* libPods-PinacotecaCoreTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PinacotecaCoreTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF629536591942BDAF510BB9 /* Pods-PinacotecaCoreTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinacotecaCoreTests.xcconfig"; path = "../Pods/Pods-PinacotecaCoreTests.xcconfig"; sourceTree = SOURCE_ROOT; };
+		F640538617766CED007051E0 /* PCServerAPIControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCServerAPIControllerTests.m; sourceTree = "<group>"; };
+		F640538A17767369007051E0 /* ServerAPIResponses.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ServerAPIResponses.bundle; sourceTree = "<group>"; };
 		F654855E177660C400109CEF /* PinacotecaCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PinacotecaCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6548561177660C400109CEF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		F6548564177660C400109CEF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -48,8 +51,6 @@
 		F6548577177660C400109CEF /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		F654857F177660C400109CEF /* PinacotecaCoreTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PinacotecaCoreTests-Info.plist"; sourceTree = "<group>"; };
 		F6548581177660C400109CEF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		F6548583177660C400109CEF /* PinacotecaCoreTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PinacotecaCoreTests.h; sourceTree = "<group>"; };
-		F6548584177660C400109CEF /* PinacotecaCoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PinacotecaCoreTests.m; sourceTree = "<group>"; };
 		F6C1E9191776665500953C67 /* OHHTTPStubsResponse+BundleResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OHHTTPStubsResponse+BundleResponse.h"; sourceTree = "<group>"; };
 		F6C1E91A1776665500953C67 /* OHHTTPStubsResponse+BundleResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OHHTTPStubsResponse+BundleResponse.m"; sourceTree = "<group>"; };
 		F6C1E91E17766A3200953C67 /* PCServerAPIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCServerAPIController.h; sourceTree = "<group>"; };
@@ -81,6 +82,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F640538817767285007051E0 /* Unit Tests */ = {
+			isa = PBXGroup;
+			children = (
+				F640538617766CED007051E0 /* PCServerAPIControllerTests.m */,
+			);
+			name = "Unit Tests";
+			sourceTree = "<group>";
+		};
+		F64053891776729C007051E0 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				F640538A17767369007051E0 /* ServerAPIResponses.bundle */,
+			);
+			name = Fixtures;
+			sourceTree = "<group>";
+		};
 		F6548554177660C400109CEF = {
 			isa = PBXGroup;
 			children = (
@@ -147,9 +164,9 @@
 		F654857D177660C400109CEF /* PinacotecaCoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				F6548583177660C400109CEF /* PinacotecaCoreTests.h */,
-				F6548584177660C400109CEF /* PinacotecaCoreTests.m */,
+				F64053891776729C007051E0 /* Fixtures */,
 				F6C1E91C1776665800953C67 /* Test Helper */,
+				F640538817767285007051E0 /* Unit Tests */,
 				F654857E177660C400109CEF /* Supporting Files */,
 			);
 			path = PinacotecaCoreTests;
@@ -277,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F640538B17767369007051E0 /* ServerAPIResponses.bundle in Resources */,
 				F6548582177660C400109CEF /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,8 +359,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F640538717766CED007051E0 /* PCServerAPIControllerTests.m in Sources */,
 				F6C1E91B1776665500953C67 /* OHHTTPStubsResponse+BundleResponse.m in Sources */,
-				F6548585177660C400109CEF /* PinacotecaCoreTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
