@@ -22,7 +22,9 @@
 {
     [super setUp];
     
-    NSManagedObjectModel *model = [NSManagedObjectModel mergedModelFromBundles:@[[NSBundle mainBundle]]];
+    NSBundle *frameworkBundle = [NSBundle bundleForClass:[PCImage class]];
+    NSURL *modelURL = [frameworkBundle URLForResource:@"Model" withExtension:@"momd"];
+    NSManagedObjectModel *model = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     self.storeCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];
     
     NSError *error = nil;
@@ -46,7 +48,6 @@
     STAssertEqualObjects(entityDescription.name, @"PCImage", nil);
     STAssertEqualObjects(entityDescription.managedObjectClassName, @"PCImage", nil);
 }
-
 
 - (void)testCreateImage
 {
