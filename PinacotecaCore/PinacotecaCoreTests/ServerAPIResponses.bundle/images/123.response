@@ -1,0 +1,8 @@
+HTTP/1.1 200 OK
+Server: ""
+Content-Type: application/json;charset=UTF-8
+Content-Language: en-US
+Date: Fri, 14 Jun 2013 20:40:11 GMT
+Connection: close
+
+{"id":"123","title":"My first Image","url":"http://data.example.com/239f8z3z48g3.jpeg"}
