@@ -7,8 +7,23 @@
 //
 
 #import "PCResourceManager.h"
+#import "PCResourceManager+Private.h"
+
+@interface PCResourceManager ()
+@property (nonatomic, readonly) PCServerAPIController *server;
+@end
+
 
 @implementation PCResourceManager
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        _server = [[PCServerAPIController alloc] init];
+    }
+    return self;
+}
 
 - (PCImage *)imageWithId:(NSString *)imageId
   usingManagedObjectContext:(NSManagedObjectContext *)context
@@ -19,4 +34,8 @@
     return image;
 }
 
+@end
+
+@implementation PCResourceManager (Private)
+@dynamic server;
 @end
