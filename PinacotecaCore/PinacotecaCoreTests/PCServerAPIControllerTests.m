@@ -57,9 +57,13 @@
     // Fetch Image
     // -----------
     
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    
     [self.server fetchImageWithId:@"123"
-                            queue:[NSOperationQueue mainQueue]
+                            queue:queue
                 completionHandler:^(id imageData, NSError *error) {
+                    STAssertEqualObjects([NSOperationQueue currentQueue], queue, nil);
+                    
                     STAssertNil(error, [error localizedDescription]);
                     
                     STAssertTrue([imageData isKindOfClass:[NSDictionary class]], nil);

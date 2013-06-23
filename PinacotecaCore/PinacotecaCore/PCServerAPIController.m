@@ -25,9 +25,15 @@
     
     [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         AFJSONRequestOperation *jsonOperation = (AFJSONRequestOperation *)operation;
-        handler(jsonOperation.responseJSON, nil);
+        NSOperationQueue *_queue = queue ?: [NSOperationQueue mainQueue];
+        [_queue addOperationWithBlock:^{
+            handler(jsonOperation.responseJSON, nil);
+        }];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        handler(nil, error);
+        NSOperationQueue *_queue = queue ?: [NSOperationQueue mainQueue];
+        [_queue addOperationWithBlock:^{
+            handler(nil, error);
+        }];
     }];
     [requestOperation start];
 }
