@@ -21,6 +21,24 @@
 
 @implementation PCImage (Private)
 
++ (NSEntityDescription *)entityDescriptionInManagedObjectContext:(NSManagedObjectContext *)context
+{
+   __block  NSEntityDescription *result = nil;
+    
+    NSString *className = NSStringFromClass(self);
+    
+    NSManagedObjectModel *model = context.persistentStoreCoordinator.managedObjectModel;
+    [[model entities] enumerateObjectsUsingBlock:^(NSEntityDescription *entityDescription,
+                                                   NSUInteger idx,
+                                                   BOOL *stop) {
+        if ([entityDescription.managedObjectClassName isEqualToString:className]) {
+            result = entityDescription;
+            *stop = YES;
+        }
+    }];
+    return result;
+}
+
 + (instancetype)createOrUpdateWithValues:(NSDictionary *)values
                   inManagedObjectContext:(NSManagedObjectContext *)context
                                  created:(BOOL *)created

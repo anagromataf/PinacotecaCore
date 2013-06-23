@@ -39,6 +39,15 @@
 
 #pragma mark Tests
 
+- (void)testEntityDescription
+{
+    NSEntityDescription *entityDescription = [PCImage entityDescriptionInManagedObjectContext:self.context];
+    STAssertNotNil(entityDescription, nil);
+    STAssertEqualObjects(entityDescription.name, @"PCImage", nil);
+    STAssertEqualObjects(entityDescription.managedObjectClassName, @"PCImage", nil);
+}
+
+
 - (void)testCreateImage
 {
     NSError *error = nil;
