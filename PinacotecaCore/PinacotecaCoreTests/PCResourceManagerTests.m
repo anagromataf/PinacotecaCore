@@ -58,16 +58,23 @@
     
     // Get the image
     
-    PCImage *image = [self.resourceManager imageWithId:@"123"
-                             usingManagedObjectContext:self.resourceManager.mainManagedObjectContext
-                                                 queue:[NSOperationQueue mainQueue]
-                                         updateHandler:^(BOOL updated, NSError *error) {
-                                             STAssertNil(error, [error localizedDescription]);
-                                             STAssertTrue(updated, nil);
-                                             STSuccess();
-                                         }];
+    __block PCImage *image = [self.resourceManager imageWithId:@"123"
+                                     usingManagedObjectContext:self.resourceManager.mainManagedObjectContext
+                                                         queue:[NSOperationQueue mainQueue]
+                                                 updateHandler:^(BOOL updated, NSError *error) {
+                                                     STAssertNil(error, [error localizedDescription]);
+                                                     STAssertTrue(updated, nil);
+                                                     
+                                                     STAssertEqualObjects(image.title, @"My first Image", nil);
+                                                     STAssertEqualObjects(image.url, @"http://data.example.com/239f8z3z48g3.jpeg", nil);
+                                                     
+                                                     STSuccess();
+                                                 }];
     STAssertNotNil(image, nil);
+    STAssertEqualObjects(image.managedObjectContext, self.resourceManager.mainManagedObjectContext, nil);
     STAssertEqualObjects(image.imageId, @"123", nil);
+    STAssertNil(image.title, nil);
+    STAssertNil(image.url, nil);
     
     STFailAfter(2.0, @"Timeout");
 }

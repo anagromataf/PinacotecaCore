@@ -19,4 +19,8 @@
                    queue:(NSOperationQueue *)queue
            updateHandler:(void (^)(BOOL updated, NSError *error))handler;
 
+- (void)updateImage:(PCImage *)image
+              queue:(NSOperationQueue *)queue
+      updateHandler:(void (^)(BOOL updated, NSError *error))handler;
+
 @end
