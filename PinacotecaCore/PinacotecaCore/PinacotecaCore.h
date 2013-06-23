@@ -8,4 +8,6 @@
 
 #import "PCConstants.h"
 
+#import "PCImage.h"
+#import "PCResourceManager.h"
 #import "PCServerAPIController.h"
