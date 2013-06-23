@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Tobias Kräntzer. All rights reserved.
 //
 
+#import <AFJSONPRequestOperation/AFJSONPRequestOperation.h>
+
 #import "PCConstants.h"
 
 #import "PCServerAPIController.h"
@@ -16,9 +18,18 @@
                    queue:(NSOperationQueue *)queue
        completionHandler:(void (^)(id JSONObject, NSError *error))handler
 {
-    [queue addOperationWithBlock:^{
-        handler(nil, [NSError errorWithDomain:PCErrorDomain code:PCNotImplementedErrorCode userInfo:nil]);
+    NSURL *imageURL = [NSURL URLWithString:@"123" relativeToURL:[NSURL URLWithString:@"http://api.example.com/v1/images/"]];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:imageURL];
+    AFJSONRequestOperation *requestOperation = [[AFJSONRequestOperation alloc] initWithRequest:request];
+    
+    [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        AFJSONRequestOperation *jsonOperation = (AFJSONRequestOperation *)operation;
+        handler(jsonOperation.responseJSON, nil);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        handler(nil, error);
     }];
+    [requestOperation start];
 }
 
 @end
