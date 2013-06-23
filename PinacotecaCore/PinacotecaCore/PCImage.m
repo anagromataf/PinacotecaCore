@@ -21,6 +21,14 @@
 
 @implementation PCImage (Private)
 
++ (instancetype)createOrUpdateWithValues:(NSDictionary *)values
+                  inManagedObjectContext:(NSManagedObjectContext *)context
+                                 created:(BOOL *)created
+                                   error:(NSError **)error
+{
+    return nil;
+}
+
 @dynamic imageId;
 @dynamic title;
 @dynamic url;

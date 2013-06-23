@@ -15,6 +15,7 @@
 		F6405393177680E0007051E0 /* PCImage.h in Headers */ = {isa = PBXBuildFile; fileRef = F6405391177680E0007051E0 /* PCImage.h */; };
 		F6405394177680E0007051E0 /* PCImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F6405392177680E0007051E0 /* PCImage.m */; };
 		F640539717768214007051E0 /* PCImage+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = F640539517768214007051E0 /* PCImage+Private.h */; };
+		F640539B1776F917007051E0 /* PCModelLayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F640539A1776F917007051E0 /* PCModelLayerTests.m */; };
 		F6548562177660C400109CEF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6548561177660C400109CEF /* Cocoa.framework */; };
 		F654856C177660C400109CEF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F654856A177660C400109CEF /* InfoPlist.strings */; };
 		F6548578177660C400109CEF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6548577177660C400109CEF /* SenTestingKit.framework */; };
@@ -49,6 +50,7 @@
 		F6405391177680E0007051E0 /* PCImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCImage.h; sourceTree = "<group>"; };
 		F6405392177680E0007051E0 /* PCImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCImage.m; sourceTree = "<group>"; };
 		F640539517768214007051E0 /* PCImage+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PCImage+Private.h"; sourceTree = "<group>"; };
+		F640539A1776F917007051E0 /* PCModelLayerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCModelLayerTests.m; sourceTree = "<group>"; };
 		F654855E177660C400109CEF /* PinacotecaCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PinacotecaCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6548561177660C400109CEF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		F6548564177660C400109CEF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -99,6 +101,7 @@
 			children = (
 				F640538A17767369007051E0 /* ServerAPIResponses.bundle */,
 				F640538617766CED007051E0 /* PCServerAPIControllerTests.m */,
+				F640539A1776F917007051E0 /* PCModelLayerTests.m */,
 			);
 			name = "Unit Tests";
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 			files = (
 				F640538717766CED007051E0 /* PCServerAPIControllerTests.m in Sources */,
 				F6C1E91B1776665500953C67 /* OHHTTPStubsResponse+BundleResponse.m in Sources */,
+				F640539B1776F917007051E0 /* PCModelLayerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
