@@ -17,10 +17,10 @@
 - (PCImage *)imageWithId:(NSString *)imageId
   usingManagedObjectContext:(NSManagedObjectContext *)context
                    queue:(NSOperationQueue *)queue
-           updateHandler:(void (^)(BOOL updated, NSError *error))handler;
+           updateHandler:(void (^)(NSError *error))handler;
 
 - (void)updateImage:(PCImage *)image
               queue:(NSOperationQueue *)queue
-      updateHandler:(void (^)(BOOL updated, NSError *error))handler;
+      updateHandler:(void (^)(NSError *error))handler;
 
 @end

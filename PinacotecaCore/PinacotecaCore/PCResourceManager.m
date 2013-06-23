@@ -65,7 +65,7 @@
 - (PCImage *)imageWithId:(NSString *)imageId
   usingManagedObjectContext:(NSManagedObjectContext *)context
                    queue:(NSOperationQueue *)queue
-           updateHandler:(void (^)(BOOL updated, NSError *error))handler
+           updateHandler:(void (^)(NSError *error))handler
 {
     __block PCImage *result = nil;
     [self.rootManagedObjectContext performBlockAndWait:^{
@@ -80,7 +80,7 @@
         if (image == nil) {
             if (handler) {
                 [queue addOperationWithBlock:^{
-                    handler(NO, error);
+                    handler(error);
                 }];
             }
             return;
@@ -90,7 +90,7 @@
             if (![self.rootManagedObjectContext save:&error]) {
                 if (handler) {
                     [queue addOperationWithBlock:^{
-                        handler(NO, error);
+                        handler(error);
                     }];
                 }
                 return;
@@ -107,7 +107,7 @@
 
 - (void)updateImage:(PCImage *)_image
               queue:(NSOperationQueue *)queue
-      updateHandler:(void (^)(BOOL updated, NSError *error))handler
+      updateHandler:(void (^)(NSError *error))handler
 {
     [self.rootManagedObjectContext performBlock:^{
         
@@ -120,7 +120,7 @@
                         if (error) {
                             if (handler) {
                                 [queue addOperationWithBlock:^{
-                                    handler(NO, error);
+                                    handler(error);
                                 }];
                             }
                             return;
@@ -140,7 +140,7 @@
                             
                             if (handler) {
                                 [queue addOperationWithBlock:^{
-                                    handler(image == nil ? NO : YES, error);
+                                    handler(error);
                                 }];
                             }
                         }];

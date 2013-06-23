@@ -61,9 +61,8 @@
     __block PCImage *image = [self.resourceManager imageWithId:@"123"
                                      usingManagedObjectContext:self.resourceManager.mainManagedObjectContext
                                                          queue:[NSOperationQueue mainQueue]
-                                                 updateHandler:^(BOOL updated, NSError *error) {
+                                                 updateHandler:^(NSError *error) {
                                                      STAssertNil(error, [error localizedDescription]);
-                                                     STAssertTrue(updated, nil);
                                                      
                                                      STAssertEqualObjects(image.title, @"My first Image", nil);
                                                      STAssertEqualObjects(image.url, @"http://data.example.com/239f8z3z48g3.jpeg", nil);
