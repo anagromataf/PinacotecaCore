@@ -10,5 +10,6 @@
 
 #pragma mark Error Domain & Codes
 
-NSString * const PCErrorDomain  = @"PCErrorDomain";
-NSInteger const PCNotImplementedErrorCode   = 10;
+NSString * const PCErrorDomain                      = @"PCErrorDomain";
+NSInteger const PCNotImplementedErrorCode           = 10;
+NSInteger const PCInternalInconsistencyErrorCode    = 20;

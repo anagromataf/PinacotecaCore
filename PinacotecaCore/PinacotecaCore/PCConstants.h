@@ -12,3 +12,4 @@
 
 extern NSString * const PCErrorDomain;
 extern NSInteger const PCNotImplementedErrorCode;
+extern NSInteger const PCInternalInconsistencyErrorCode;
