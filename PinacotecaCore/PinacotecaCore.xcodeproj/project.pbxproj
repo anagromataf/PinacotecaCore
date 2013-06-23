@@ -11,6 +11,9 @@
 		D9D2053F52A84477AE1C5F90 /* libPods-PinacotecaCoreTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AFB068A69E4261B63A445F /* libPods-PinacotecaCoreTests.a */; };
 		F640538717766CED007051E0 /* PCServerAPIControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F640538617766CED007051E0 /* PCServerAPIControllerTests.m */; };
 		F640538B17767369007051E0 /* ServerAPIResponses.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F640538A17767369007051E0 /* ServerAPIResponses.bundle */; };
+		F640539017768024007051E0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F640538E17768024007051E0 /* Model.xcdatamodeld */; };
+		F6405393177680E0007051E0 /* PCImage.h in Headers */ = {isa = PBXBuildFile; fileRef = F6405391177680E0007051E0 /* PCImage.h */; };
+		F6405394177680E0007051E0 /* PCImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F6405392177680E0007051E0 /* PCImage.m */; };
 		F6548562177660C400109CEF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6548561177660C400109CEF /* Cocoa.framework */; };
 		F654856C177660C400109CEF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F654856A177660C400109CEF /* InfoPlist.strings */; };
 		F6548578177660C400109CEF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6548577177660C400109CEF /* SenTestingKit.framework */; };
@@ -41,6 +44,9 @@
 		EF629536591942BDAF510BB9 /* Pods-PinacotecaCoreTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinacotecaCoreTests.xcconfig"; path = "../Pods/Pods-PinacotecaCoreTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		F640538617766CED007051E0 /* PCServerAPIControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCServerAPIControllerTests.m; sourceTree = "<group>"; };
 		F640538A17767369007051E0 /* ServerAPIResponses.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ServerAPIResponses.bundle; sourceTree = "<group>"; };
+		F640538F17768024007051E0 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		F6405391177680E0007051E0 /* PCImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCImage.h; sourceTree = "<group>"; };
+		F6405392177680E0007051E0 /* PCImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCImage.m; sourceTree = "<group>"; };
 		F654855E177660C400109CEF /* PinacotecaCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PinacotecaCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6548561177660C400109CEF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		F6548564177660C400109CEF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -95,6 +101,16 @@
 			name = "Unit Tests";
 			sourceTree = "<group>";
 		};
+		F640538D1776800A007051E0 /* Model Layer */ = {
+			isa = PBXGroup;
+			children = (
+				F640538E17768024007051E0 /* Model.xcdatamodeld */,
+				F6405391177680E0007051E0 /* PCImage.h */,
+				F6405392177680E0007051E0 /* PCImage.m */,
+			);
+			name = "Model Layer";
+			sourceTree = "<group>";
+		};
 		F6548554177660C400109CEF = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +160,7 @@
 				F654856E177660C400109CEF /* PinacotecaCore.h */,
 				F6C1E92217766B9E00953C67 /* PCConstants.h */,
 				F6C1E92317766B9E00953C67 /* PCConstants.m */,
+				F640538D1776800A007051E0 /* Model Layer */,
 				F6C1E91D177669E900953C67 /* API Layer */,
 				F6548568177660C400109CEF /* Supporting Files */,
 			);
@@ -205,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6C1E92017766A3200953C67 /* PCServerAPIController.h in Headers */,
+				F6405393177680E0007051E0 /* PCImage.h in Headers */,
 				F6C1E92417766B9E00953C67 /* PCConstants.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,6 +398,8 @@
 			files = (
 				F6C1E92117766A3200953C67 /* PCServerAPIController.m in Sources */,
 				F6C1E92517766B9E00953C67 /* PCConstants.m in Sources */,
+				F6405394177680E0007051E0 /* PCImage.m in Sources */,
+				F640539017768024007051E0 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,6 +592,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F640538E17768024007051E0 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F640538F17768024007051E0 /* Model.xcdatamodel */,
+			);
+			currentVersion = F640538F17768024007051E0 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F6548555177660C400109CEF /* Project object */;
 }
