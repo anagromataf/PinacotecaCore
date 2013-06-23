@@ -57,12 +57,15 @@
                              @"title":@"My first Image",
                              @"url":@"http://data.example.com/239f8z3z48g3.jpeg"};
     
+    PCImage *image = nil;
+    
+    // Createn an image
     
     BOOL created = NO;
-    PCImage *image = [PCImage createOrUpdateWithValues:values
-                                inManagedObjectContext:self.context
-                                               created:&created
-                                                 error:&error];
+    image = [PCImage createOrUpdateWithValues:values
+                       inManagedObjectContext:self.context
+                                      created:&created
+                                        error:&error];
     STAssertNotNil(image, [error localizedDescription]);
     STAssertTrue(created, nil);
     
@@ -70,11 +73,38 @@
     STAssertEqualObjects(image.title, @"My first Image", nil);
     STAssertEqualObjects(image.url, @"http://data.example.com/239f8z3z48g3.jpeg", nil);
     
-    PCImage *createdImage = [PCImage imageWithId:@"123"
-                          inManagedObjectContext:self.context
-                                           error:&error];
-    STAssertNotNil(createdImage, [error localizedDescription]);
-    STAssertEqualObjects(createdImage, image, nil);
+    // Save the created image
+    
+    BOOL success = [self.context save:&error];
+    STAssertTrue(success, [error localizedDescription]);
+    
+    // Fetch the image again
+    
+    image = [PCImage imageWithId:@"123"
+          inManagedObjectContext:self.context
+                           error:&error];
+    STAssertNotNil(image, [error localizedDescription]);
+    
+    STAssertEqualObjects(image.imageId, @"123", nil);
+    STAssertEqualObjects(image.title, @"My first Image", nil);
+    STAssertEqualObjects(image.url, @"http://data.example.com/239f8z3z48g3.jpeg", nil);
+    
+    // Update the image
+    
+    NSDictionary *newValues = @{@"id":@"123",
+                                @"title":@"My best Image",
+                                @"url":@"http://data.example.com/239f8z3z48g3.jpeg"};
+    
+    image = [PCImage createOrUpdateWithValues:newValues
+                       inManagedObjectContext:self.context
+                                      created:&created
+                                        error:&error];
+    STAssertNotNil(image, [error localizedDescription]);
+    STAssertFalse(created, nil);
+    
+    STAssertEqualObjects(image.imageId, @"123", nil);
+    STAssertEqualObjects(image.title, @"My best Image", nil);
+    STAssertEqualObjects(image.url, @"http://data.example.com/239f8z3z48g3.jpeg", nil);
 }
 
 @end

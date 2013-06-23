@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Tobias Kräntzer. All rights reserved.
 //
 
+#import "PCConstants.h"
+
 #import "PCImage.h"
 #import "PCImage+Private.h"
 
@@ -44,14 +46,68 @@
                                  created:(BOOL *)created
                                    error:(NSError **)error
 {
-    return nil;
+    NSError *_error = nil;
+    
+    PCImage *image = [self imageWithId:values[@"id"]
+                inManagedObjectContext:context
+                                 error:&_error];
+    if (_error) {
+        if (error) {
+            *error = _error;
+        }
+        return nil;
+    }
+    
+    if (!image) {
+        NSEntityDescription *entityDescription = [self entityDescriptionInManagedObjectContext:context];
+        image = [[self alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:context];
+        image.imageId = values[@"id"];
+        
+        if (created) {
+            *created = YES;
+        }
+    } else {
+        if (created) {
+            *created = NO;
+        }
+    }
+    
+    image.title = values[@"title"];
+    image.url = values[@"url"];
+    
+    if (error) {
+        *error = _error;
+    }
+    
+    return image;
 }
 
 + (instancetype)imageWithId:(NSString *)imageId
      inManagedObjectContext:(NSManagedObjectContext *)context
                       error:(NSError **)error
 {
-    return nil;
+    NSEntityDescription *entityDescription = [self entityDescriptionInManagedObjectContext:context];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityDescription.name];
+    
+    request.predicate = [NSPredicate predicateWithFormat:@"imageId == %@"
+                                           argumentArray:@[imageId]];
+    
+    NSArray *result = [context executeFetchRequest:request
+                                             error:error];
+    
+    switch ([result count]) {
+        case 0: return  nil;
+        case 1: return result[0];
+        default:
+        {
+            if (error) {
+                *error = [NSError errorWithDomain:PCErrorDomain
+                                             code:PCInternalInconsistencyErrorCode
+                                         userInfo:nil];
+            }
+            return nil;
+        };
+    }
 }
 
 @dynamic imageId;
