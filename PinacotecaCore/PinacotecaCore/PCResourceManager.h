@@ -12,8 +12,10 @@
 
 @interface PCResourceManager : NSObject
 
+@property (nonatomic, readonly) NSManagedObjectContext *mainManagedObjectContext;
+
 - (PCImage *)imageWithId:(NSString *)imageId
-  inManagedObjectContext:(NSManagedObjectContext *)context
+  usingManagedObjectContext:(NSManagedObjectContext *)context
                    queue:(NSOperationQueue *)queue
            updateHandler:(void (^)(BOOL updated, NSError *error))handler;
 
