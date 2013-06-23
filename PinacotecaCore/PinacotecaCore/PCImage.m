@@ -7,8 +7,19 @@
 //
 
 #import "PCImage.h"
+#import "PCImage+Private.h"
 
 @implementation PCImage
+
+@dynamic imageId;
+@dynamic title;
+@dynamic url;
+
+@end
+
+#pragma mark -
+
+@implementation PCImage (Private)
 
 @dynamic imageId;
 @dynamic title;
