@@ -15,6 +15,10 @@
                                  created:(BOOL *)created
                                    error:(NSError **)error;
 
++ (instancetype)imageWithId:(NSString *)imageId
+     inManagedObjectContext:(NSManagedObjectContext *)context
+                      error:(NSError **)error;
+
 @property (nonatomic, readwrite, strong) NSString *imageId;
 @property (nonatomic, readwrite, strong) NSString *title;
 @property (nonatomic, readwrite, strong) NSString *url;

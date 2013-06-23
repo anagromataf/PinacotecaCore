@@ -41,11 +41,13 @@
 
 - (void)testCreateImage
 {
+    NSError *error = nil;
+    
     NSDictionary *values = @{@"id":@"123",
                              @"title":@"My first Image",
                              @"url":@"http://data.example.com/239f8z3z48g3.jpeg"};
     
-    NSError *error = nil;
+    
     BOOL created = NO;
     PCImage *image = [PCImage createOrUpdateWithValues:values
                                 inManagedObjectContext:self.context
@@ -57,6 +59,12 @@
     STAssertEqualObjects(image.imageId, @"123", nil);
     STAssertEqualObjects(image.title, @"My first Image", nil);
     STAssertEqualObjects(image.url, @"http://data.example.com/239f8z3z48g3.jpeg", nil);
+    
+    PCImage *createdImage = [PCImage imageWithId:@"123"
+                          inManagedObjectContext:self.context
+                                           error:&error];
+    STAssertNotNil(createdImage, [error localizedDescription]);
+    STAssertEqualObjects(createdImage, image, nil);
 }
 
 @end

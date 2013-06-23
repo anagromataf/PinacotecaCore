@@ -29,6 +29,13 @@
     return nil;
 }
 
++ (instancetype)imageWithId:(NSString *)imageId
+     inManagedObjectContext:(NSManagedObjectContext *)context
+                      error:(NSError **)error
+{
+    return nil;
+}
+
 @dynamic imageId;
 @dynamic title;
 @dynamic url;
