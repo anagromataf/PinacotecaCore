@@ -1,0 +1,22 @@
+PODS:
+  - AFJSONPRequestOperation (1.0.0):
+    - AFNetworking
+  - AFNetworking (1.3.1)
+  - OCMock (2.1.1)
+  - OHHTTPStubs (1.1.2)
+  - SenTestingKitAsync (1.0.6)
+
+DEPENDENCIES:
+  - AFJSONPRequestOperation
+  - OCMock
+  - OHHTTPStubs
+  - SenTestingKitAsync
+
+SPEC CHECKSUMS:
+  AFJSONPRequestOperation: f77bb7b588a0d3e42133f36c8471f75bd67bc41b
+  AFNetworking: 9ec8aafb9269236a7630bd8d9838ce2ba30fa2a0
+  OCMock: 79212e5e328378af5cfd6edb5feacfd6c49cd8a3
+  OHHTTPStubs: a840cb0fe0c2a4271018be540782cc97139dff53
+  SenTestingKitAsync: 32270df7e96442b34d5542859622ce7fef7d7c38
+
+COCOAPODS: 0.20.2
