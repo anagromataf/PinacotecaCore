@@ -68,9 +68,9 @@
                     
                     STAssertTrue([imageData isKindOfClass:[NSDictionary class]], nil);
                     
-                    STAssertEqualObjects([imageData valueForKey:@"id"], @"123", nil);
-                    STAssertEqualObjects([imageData valueForKey:@"title"], @"My first Image", nil);
-                    STAssertEqualObjects([imageData valueForKey:@"url"], @"http://data.example.com/239f8z3z48g3.jpeg", nil);
+                    STAssertEqualObjects(imageData[@"id"],     @"123", nil);
+                    STAssertEqualObjects(imageData[@"title"],  @"My first Image", nil);
+                    STAssertEqualObjects(imageData[@"url"],    @"http://data.example.com/239f8z3z48g3.jpeg", nil);
                     
                     STSuccess();
                 }];
