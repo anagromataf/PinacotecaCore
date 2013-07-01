@@ -70,6 +70,14 @@
     __block PCImage *result = nil;
     [self.rootManagedObjectContext performBlockAndWait:^{
         
+        void(^_handler)(NSError *) = ^(NSError *error) {
+            if (handler) {
+                [queue addOperationWithBlock:^{
+                    handler(error);
+                }];
+            }
+        };
+        
         BOOL created = YES;
         NSError *error = nil;
         PCImage *image = [PCImage createOrUpdateWithValues:@{@"id":imageId}
@@ -78,23 +86,13 @@
                                                      error:&error];
         
         if (image == nil) {
-            if (handler) {
-                [queue addOperationWithBlock:^{
-                    handler(error);
-                }];
-            }
+            _handler(error);
             return;
         }
         
-        if (created) {
-            if (![self.rootManagedObjectContext save:&error]) {
-                if (handler) {
-                    [queue addOperationWithBlock:^{
-                        handler(error);
-                    }];
-                }
-                return;
-            }
+        if (created && ![self.rootManagedObjectContext save:&error]) {
+            _handler(error);
+            return;
         }
         
         result = (PCImage *)[context objectWithID:image.objectID];
@@ -111,6 +109,14 @@
 {
     [self.rootManagedObjectContext performBlock:^{
         
+        void(^_handler)(NSError *) = ^(NSError *error) {
+            if (handler) {
+                [queue addOperationWithBlock:^{
+                    handler(error);
+                }];
+            }
+        };
+        
         PCImage *image = (PCImage *)[self.rootManagedObjectContext objectWithID:_image.objectID];
         
         [self.server fetchImageWithId:image.imageId
@@ -118,11 +124,7 @@
                     completionHandler:^(id values, NSError *error) {
                         
                         if (error) {
-                            if (handler) {
-                                [queue addOperationWithBlock:^{
-                                    handler(error);
-                                }];
-                            }
+                            _handler(error);
                             return;
                         }
                         
@@ -138,11 +140,7 @@
                                 [self.rootManagedObjectContext save:&error];
                             }
                             
-                            if (handler) {
-                                [queue addOperationWithBlock:^{
-                                    handler(error);
-                                }];
-                            }
+                            _handler(error);
                         }];
                     }];
     }];

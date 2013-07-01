@@ -9,8 +9,6 @@
 #import <SenTestingKitAsync/SenTestingKitAsync.h>
 #import <OHHTTPStubs/OHHTTPStubs.h>
 
-#import "OHHTTPStubsResponse+BundleResponse.h"
-
 #import "PCServerAPIController.h"
 
 @interface PCServerAPIControllerTests : SenTestCase
@@ -41,7 +39,7 @@
     NSURL *responsesBundleURL = [[NSBundle bundleForClass:[self class]] URLForResource:@"ServerAPIResponses" withExtension:@"bundle"];
     NSBundle *responsesBundle = [NSBundle bundleWithURL:responsesBundleURL];
     
-    [OHHTTPStubs shouldStubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
     
         return ([request.HTTPMethod isEqualToString:@"GET"] &&
                 [request.URL.absoluteString isEqualToString:@"http://api.example.com/v1/images/123"]);
@@ -68,9 +66,9 @@
                     
                     STAssertTrue([imageData isKindOfClass:[NSDictionary class]], nil);
                     
-                    STAssertEqualObjects([imageData valueForKey:@"id"], @"123", nil);
-                    STAssertEqualObjects([imageData valueForKey:@"title"], @"My first Image", nil);
-                    STAssertEqualObjects([imageData valueForKey:@"url"], @"http://data.example.com/239f8z3z48g3.jpeg", nil);
+                    STAssertEqualObjects(imageData[@"id"],     @"123", nil);
+                    STAssertEqualObjects(imageData[@"title"],  @"My first Image", nil);
+                    STAssertEqualObjects(imageData[@"url"],    @"http://data.example.com/239f8z3z48g3.jpeg", nil);
                     
                     STSuccess();
                 }];
