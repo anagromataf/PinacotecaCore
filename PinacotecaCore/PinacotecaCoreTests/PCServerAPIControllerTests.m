@@ -9,8 +9,6 @@
 #import <SenTestingKitAsync/SenTestingKitAsync.h>
 #import <OHHTTPStubs/OHHTTPStubs.h>
 
-#import "OHHTTPStubsResponse+BundleResponse.h"
-
 #import "PCServerAPIController.h"
 
 @interface PCServerAPIControllerTests : SenTestCase
@@ -41,7 +39,7 @@
     NSURL *responsesBundleURL = [[NSBundle bundleForClass:[self class]] URLForResource:@"ServerAPIResponses" withExtension:@"bundle"];
     NSBundle *responsesBundle = [NSBundle bundleWithURL:responsesBundleURL];
     
-    [OHHTTPStubs shouldStubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
     
         return ([request.HTTPMethod isEqualToString:@"GET"] &&
                 [request.URL.absoluteString isEqualToString:@"http://api.example.com/v1/images/123"]);
