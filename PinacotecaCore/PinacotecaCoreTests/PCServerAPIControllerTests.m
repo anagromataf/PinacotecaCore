@@ -40,22 +40,18 @@
     NSBundle *responsesBundle = [NSBundle bundleWithURL:responsesBundleURL];
     
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
-    
         return ([request.HTTPMethod isEqualToString:@"GET"] &&
                 [request.URL.absoluteString isEqualToString:@"http://api.example.com/v1/images/123"]);
-    
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        
         return [OHHTTPStubsResponse responseNamed:@"images/123"
                                        fromBundle:responsesBundle
                                      responseTime:0.1];
-        
     }];
     
     // Fetch Image
     // -----------
     
-    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    NSOperationQueue *queue = [NSOperationQueue mainQueue];
     
     [self.server fetchImageWithId:@"123"
                             queue:queue
