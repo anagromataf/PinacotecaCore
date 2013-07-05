@@ -14,4 +14,9 @@
                    queue:(NSOperationQueue *)queue
        completionHandler:(void (^)(id JSONObject, NSError *error))handler;
 
+- (void)createImageWithPorperties:(NSDictionary *)properties
+                            queue:(NSOperationQueue *)queue
+                completionHandler:(void (^)(NSString *imageId, NSError *error))handler;
+
+
 @end

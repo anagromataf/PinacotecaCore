@@ -10,8 +10,6 @@
 
 @interface PCImage (Private)
 
-+ (NSEntityDescription *)entityDescriptionInManagedObjectContext:(NSManagedObjectContext *)context;
-
 + (instancetype)createOrUpdateWithValues:(NSDictionary *)values
                   inManagedObjectContext:(NSManagedObjectContext *)context
                                  created:(BOOL *)created
@@ -22,7 +20,6 @@
                       error:(NSError **)error;
 
 @property (nonatomic, readwrite, strong) NSString *imageId;
-@property (nonatomic, readwrite, strong) NSString *title;
 @property (nonatomic, readwrite, strong) NSString *url;
 
 @end

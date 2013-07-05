@@ -111,7 +111,6 @@
 }
 
 @dynamic imageId;
-@dynamic title;
 @dynamic url;
 
 @end

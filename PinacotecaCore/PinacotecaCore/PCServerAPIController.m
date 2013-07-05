@@ -38,4 +38,16 @@
     [requestOperation start];
 }
 
+- (void)createImageWithPorperties:(NSDictionary *)properties
+                            queue:(NSOperationQueue *)queue
+                completionHandler:(void (^)(NSString *imageId, NSError *error))handler
+{
+    if (handler) {
+        NSOperationQueue *_queue = queue ?: [NSOperationQueue mainQueue];
+        [_queue addOperationWithBlock:^{
+            handler(nil, [NSError errorWithDomain:PCErrorDomain code:PCNotImplementedErrorCode userInfo:nil]);
+        }];
+    }
+}
+
 @end

@@ -53,6 +53,11 @@
                                                  selector:@selector(rootManagedObjectContextDidSave:)
                                                      name:NSManagedObjectContextDidSaveNotification
                                                    object:_rootManagedObjectContext];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(mainManagedObjectContextDidSave:)
+                                                     name:NSManagedObjectContextDidSaveNotification
+                                                   object:_mainManagedObjectContext];
     }
     return self;
 }
@@ -152,6 +157,29 @@
 {
     [self.mainManagedObjectContext performBlock:^{
         [self.mainManagedObjectContext mergeChangesFromContextDidSaveNotification:aNotification];
+    }];
+}
+
+- (void)mainManagedObjectContextDidSave:(NSNotification *)aNotification
+{
+    NSArray *insertedObjects = [[aNotification userInfo] valueForKey:NSInsertedObjectsKey];
+    
+    [insertedObjects enumerateObjectsUsingBlock:^(NSManagedObject *obj, NSUInteger idx, BOOL *stop) {
+        
+        [self.server createImageWithPorperties:@{}
+                                         queue:self.queue
+                             completionHandler:^(NSString *imageId, NSError *error) {
+                                 
+                                 NSManagedObjectContext *context = self.rootManagedObjectContext;
+                                 [context performBlock:^{
+                                     PCImage *image = (PCImage *)[context objectWithID:obj.objectID];
+                                     image.imageId = imageId;
+                                     
+                                     NSError *error = nil;
+                                     BOOL success = [context save:&error];
+                                     NSAssert(success, [error localizedDescription]);
+                                 }];
+                             }];
     }];
 }
 
