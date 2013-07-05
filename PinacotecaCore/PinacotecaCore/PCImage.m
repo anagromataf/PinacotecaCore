@@ -13,6 +13,12 @@
 
 @implementation PCImage
 
++ (instancetype)createInManagedObjectContext:(NSManagedObjectContext *)context
+{
+    NSEntityDescription *entityDescription = [self entityDescriptionInManagedObjectContext:context];
+    return [[self alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:context];
+}
+
 @dynamic imageId;
 @dynamic title;
 @dynamic url;
@@ -25,7 +31,7 @@
 
 + (NSEntityDescription *)entityDescriptionInManagedObjectContext:(NSManagedObjectContext *)context
 {
-   __block  NSEntityDescription *result = nil;
+    __block  NSEntityDescription *result = nil;
     
     NSString *className = NSStringFromClass(self);
     

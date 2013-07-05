@@ -12,7 +12,7 @@
 
 @interface PCImage : NSManagedObject
 
-+ (NSEntityDescription *)entityDescriptionInManagedObjectContext:(NSManagedObjectContext *)context;
++ (instancetype)createInManagedObjectContext:(NSManagedObjectContext *)context;
 
 @property (nonatomic, readonly) NSString *imageId;
 @property (nonatomic, readonly) NSString *url;

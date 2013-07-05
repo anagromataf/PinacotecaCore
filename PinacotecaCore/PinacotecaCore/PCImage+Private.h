@@ -10,6 +10,8 @@
 
 @interface PCImage (Private)
 
++ (NSEntityDescription *)entityDescriptionInManagedObjectContext:(NSManagedObjectContext *)context;
+
 + (instancetype)createOrUpdateWithValues:(NSDictionary *)values
                   inManagedObjectContext:(NSManagedObjectContext *)context
                                  created:(BOOL *)created

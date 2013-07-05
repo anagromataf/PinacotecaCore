@@ -163,17 +163,16 @@
 - (void)mainManagedObjectContextDidSave:(NSNotification *)aNotification
 {
     NSArray *insertedObjects = [[aNotification userInfo] valueForKey:NSInsertedObjectsKey];
-    
-    [insertedObjects enumerateObjectsUsingBlock:^(NSManagedObject *obj, NSUInteger idx, BOOL *stop) {
+    [insertedObjects enumerateObjectsUsingBlock:^(PCImage *image, NSUInteger idx, BOOL *stop) {
         
-        [self.server createImageWithPorperties:@{}
+        [self.server createImageWithPorperties:[image committedValuesForKeys:nil]
                                          queue:self.queue
                              completionHandler:^(NSString *imageId, NSError *error) {
                                  
                                  NSManagedObjectContext *context = self.rootManagedObjectContext;
                                  [context performBlock:^{
-                                     PCImage *image = (PCImage *)[context objectWithID:obj.objectID];
-                                     image.imageId = imageId;
+                                     PCImage *_image = (PCImage *)[context objectWithID:image.objectID];
+                                     _image.imageId = imageId;
                                      
                                      NSError *error = nil;
                                      BOOL success = [context save:&error];
@@ -181,6 +180,12 @@
                                  }];
                              }];
     }];
+    
+    // Save the changes made by the the main context
+    
+    NSError *error = nil;
+    BOOL success = [self.rootManagedObjectContext save:&error];
+    NSAssert(success, [error localizedDescription]);
 }
 
 @end

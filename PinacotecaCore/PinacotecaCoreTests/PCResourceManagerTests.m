@@ -90,31 +90,36 @@ typedef void (^ATKVOStubbingBlock)(NSObject *object, NSString *keyPath, NSDictio
     NSManagedObjectContext *context = self.resourceManager.mainManagedObjectContext;
     
     // Stub the Server API Method to fetch the image
+    // ---------------------------------------------
     
     OCMockObject *serverMock = [OCMockObject partialMockForObject:self.resourceManager.server];
     
-    id expector = [[serverMock expect] andCall:@selector(createImageWithPorperties:queue:completionHandler:) onObject:self];
-    [expector createImageWithPorperties:OCMOCK_ANY queue:OCMOCK_ANY completionHandler:OCMOCK_ANY];
+    id expector = [[serverMock expect] andCall:@selector(createImageWithPorperties:queue:completionHandler:)
+                                      onObject:self];
     
+    [expector createImageWithPorperties:OCMOCK_ANY
+                                  queue:OCMOCK_ANY
+                      completionHandler:OCMOCK_ANY];
     
     // Create image
+    // ------------
     
-    PCImage *image = [[PCImage alloc] initWithEntity:[PCImage entityDescriptionInManagedObjectContext:context]
-                      insertIntoManagedObjectContext:context];
-    STAssertNotNil(image, nil);
-    
+    PCImage *image = [PCImage createInManagedObjectContext:context];
     image.title = @"My other Image";
+    
+    NSError *error = nil;
+    BOOL success = [context save:&error];
+    STAssertTrue(success, [error localizedDescription]);
+    
+    // Wait for the change of the image id
+    // -----------------------------------
     
     [self stubKVOOnObject:image keyPath:@"imageId" block:^(NSObject *object, NSString *keyPath, NSDictionary *change) {
         STAssertEqualObjects(image.imageId, @"321", nil);
         STAssertNoThrow([serverMock verify], nil);
         STSuccess();
     }];
-    
-    NSError *error = nil;
-    BOOL success = [context save:&error];
-    STAssertTrue(success, [error localizedDescription]);
-    
+
     STFailAfter(2.0, @"Timeout");
 }
 
