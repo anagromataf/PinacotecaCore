@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Tobias Kräntzer. All rights reserved.
 //
 
-#import <AFJSONPRequestOperation/AFJSONPRequestOperation.h>
+#import <AFNetworking/AFNetworking.h>
 
 #import "PCConstants.h"
 
@@ -21,14 +21,16 @@
     NSURL *imageURL = [NSURL URLWithString:@"123" relativeToURL:[NSURL URLWithString:@"http://api.example.com/v1/images/"]];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:imageURL];
-    AFJSONRequestOperation *requestOperation = [[AFJSONRequestOperation alloc] initWithRequest:request];
+    AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    requestOperation.responseSerializer = [[AFJSONResponseSerializer alloc] init];
     
     [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        AFJSONRequestOperation *jsonOperation = (AFJSONRequestOperation *)operation;
+        
         NSOperationQueue *_queue = queue ?: [NSOperationQueue mainQueue];
         [_queue addOperationWithBlock:^{
-            handler(jsonOperation.responseJSON, nil);
+            handler(responseObject, operation.error);
         }];
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSOperationQueue *_queue = queue ?: [NSOperationQueue mainQueue];
         [_queue addOperationWithBlock:^{
